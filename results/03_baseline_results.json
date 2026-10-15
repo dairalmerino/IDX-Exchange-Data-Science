@@ -1,0 +1,50 @@
+{
+  "model": "LinearRegression",
+  "target": "ClosePrice",
+  "target_units": "USD",
+  "test_r2": 0.6477699349217355,
+  "test_mae_usd": 357649.0386634005,
+  "comparison_results": [
+    {
+      "model": "Linear Regression",
+      "test_r2": 0.6477699349217355,
+      "test_mae_usd": 357649.0386634005
+    },
+    {
+      "model": "Training-mean reference",
+      "test_r2": -0.0016318115392621735,
+      "test_mae_usd": 751222.4590022133
+    }
+  ],
+  "train_rows": 27974,
+  "test_rows": 12480,
+  "train_first_sale": "2026-01-01",
+  "train_last_sale": "2026-03-31",
+  "test_month": "2026-04",
+  "selected_training_months": 3,
+  "numeric_features": [
+    "LivingArea",
+    "LotSizeSquareFeet",
+    "BedroomsTotal",
+    "BathroomsTotalInteger",
+    "GarageSpaces",
+    "ParkingTotal",
+    "Stories",
+    "YearBuilt",
+    "Latitude",
+    "Longitude"
+  ],
+  "categorical_features": [
+    "City",
+    "PostalCode"
+  ],
+  "input_path": "data/cleaned_single_family_sales_with_splits.csv",
+  "input_sha256": "ef58d6f1936fdc70b7d8184d37e1a90c26a87fb673c9b4df91a8711163f0f07c",
+  "python_version": "3.13.11",
+  "package_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2"
+  },
+  "evaluation_note": "Existing holdout previously inspected during Week 3; window selected with Ridge validation MAE."
+}
