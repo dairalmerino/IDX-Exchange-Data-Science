@@ -1,0 +1,79 @@
+[
+  {
+    "OBJECTID":107,
+    "CDCode":"1076778",
+    "DistrictName":"Washington Unified",
+    "invalid_reason":"Ring Self-intersection[-119.79076768842 36.7068630336516]",
+    "original_type":"Polygon",
+    "make_valid_type":"Polygon",
+    "polygon_type":"Polygon",
+    "nonpolygon_components_removed":false,
+    "repair_ok":true
+  },
+  {
+    "OBJECTID":283,
+    "CDCode":"1964725",
+    "DistrictName":"Long Beach Unified",
+    "invalid_reason":"Ring Self-intersection[-118.159896157568 33.8601738396824]",
+    "original_type":"MultiPolygon",
+    "make_valid_type":"MultiPolygon",
+    "polygon_type":"MultiPolygon",
+    "nonpolygon_components_removed":false,
+    "repair_ok":true
+  },
+  {
+    "OBJECTID":353,
+    "CDCode":"2365573",
+    "DistrictName":"Manchester Union Elementary",
+    "invalid_reason":"Ring Self-intersection[-123.658147539432 38.9473609423707]",
+    "original_type":"Polygon",
+    "make_valid_type":"Polygon",
+    "polygon_type":"Polygon",
+    "nonpolygon_components_removed":false,
+    "repair_ok":true
+  },
+  {
+    "OBJECTID":608,
+    "CDCode":"4068726",
+    "DistrictName":"Cayucos Elementary",
+    "invalid_reason":"Ring Self-intersection[-120.80599272587 35.4598458477036]",
+    "original_type":"Polygon",
+    "make_valid_type":"Polygon",
+    "polygon_type":"Polygon",
+    "nonpolygon_components_removed":false,
+    "repair_ok":true
+  },
+  {
+    "OBJECTID":616,
+    "CDCode":"4075465",
+    "DistrictName":"Coast Unified",
+    "invalid_reason":"Ring Self-intersection[-120.80599272587 35.4598458477036]",
+    "original_type":"Polygon",
+    "make_valid_type":"Polygon",
+    "polygon_type":"Polygon",
+    "nonpolygon_components_removed":false,
+    "repair_ok":true
+  },
+  {
+    "OBJECTID":675,
+    "CDCode":"4369534",
+    "DistrictName":"Los Gatos-Saratoga Union High",
+    "invalid_reason":"Nested shells[-121.99939207782 37.1126199181595]",
+    "original_type":"MultiPolygon",
+    "make_valid_type":"MultiPolygon",
+    "polygon_type":"MultiPolygon",
+    "nonpolygon_components_removed":false,
+    "repair_ok":true
+  },
+  {
+    "OBJECTID":688,
+    "CDCode":"4369690",
+    "DistrictName":"Sunnyvale",
+    "invalid_reason":"Nested shells[-122.00612211111 37.4076939428822]",
+    "original_type":"MultiPolygon",
+    "make_valid_type":"MultiPolygon",
+    "polygon_type":"MultiPolygon",
+    "nonpolygon_components_removed":false,
+    "repair_ok":true
+  }
+]

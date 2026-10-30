@@ -1,0 +1,14 @@
+{
+  "source": "https://services3.arcgis.com/fdvHcZVgB2QSRNkL/arcgis/rest/services/SchoolDistrictAreas2425/FeatureServer/0",
+  "boundary_year": "2024-25",
+  "retrieved_utc": "2026-10-30T07:23:00.457072+00:00",
+  "feature_count": 937,
+  "sha256": "316d71c988e1d75a312cfcf72b2c21ee6519edafb5bc4f78e70db799fb8976a3",
+  "requested_fields": [
+    "OBJECTID",
+    "Year",
+    "CDCode",
+    "DistrictName",
+    "DistrictType"
+  ]
+}
