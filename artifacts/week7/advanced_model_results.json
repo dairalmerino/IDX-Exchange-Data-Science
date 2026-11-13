@@ -1,0 +1,508 @@
+{
+  "generated_utc": "2026-11-12T04:28:14.275283+00:00",
+  "input_sha256": "ef58d6f1936fdc70b7d8184d37e1a90c26a87fb673c9b4df91a8711163f0f07c",
+  "boundary_snapshot": {
+    "source": "https://services3.arcgis.com/fdvHcZVgB2QSRNkL/arcgis/rest/services/SchoolDistrictAreas2425/FeatureServer/0",
+    "boundary_year": "2024-25",
+    "retrieved_utc": "2026-10-30T07:23:00.457072+00:00",
+    "feature_count": 937,
+    "sha256": "316d71c988e1d75a312cfcf72b2c21ee6519edafb5bc4f78e70db799fb8976a3",
+    "requested_fields": [
+      "OBJECTID",
+      "Year",
+      "CDCode",
+      "DistrictName",
+      "DistrictType"
+    ]
+  },
+  "package_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "geopandas": "1.2.0",
+    "shapely": "2.2.0",
+    "xgboost": "3.4.1"
+  },
+  "features": [
+    "LivingArea",
+    "LotSizeSquareFeet",
+    "BedroomsTotal",
+    "BathroomsTotalInteger",
+    "GarageSpaces",
+    "Stories",
+    "YearBuilt",
+    "Latitude",
+    "Longitude",
+    "City",
+    "PostalCode",
+    "ElementaryDistrictCode",
+    "HighDistrictCode",
+    "UnifiedDistrictCode"
+  ],
+  "fixed_xgboost_parameters": {
+    "objective": "reg:squarederror",
+    "tree_method": "hist",
+    "random_state": 42,
+    "n_jobs": 4
+  },
+  "grid": {
+    "max_depth": [
+      3,
+      6
+    ],
+    "learning_rate": [
+      0.03,
+      0.1
+    ],
+    "n_estimators": [
+      200,
+      500
+    ]
+  },
+  "starter_parameters": {
+    "max_depth": 3,
+    "learning_rate": 0.1,
+    "n_estimators": 200
+  },
+  "selected_parameters": {
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 500
+  },
+  "selection_metric": "equal-month February/March validation MAE",
+  "validation_results": [
+    {
+      "candidate_id": 0,
+      "validation_month": "2026-02",
+      "learning_rate": 0.03,
+      "max_depth": 3,
+      "n_estimators": 200,
+      "mae_usd": 385889.0354909218,
+      "rmse_usd": 850338.6131484833,
+      "r2": 0.5912407983,
+      "train_r2": 0.7759861141,
+      "r2_gap": 0.1847453157,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "candidate_id": 0,
+      "validation_month": "2026-03",
+      "learning_rate": 0.03,
+      "max_depth": 3,
+      "n_estimators": 200,
+      "mae_usd": 389207.9962915548,
+      "rmse_usd": 863466.9616217791,
+      "r2": 0.6565159389,
+      "train_r2": 0.7257841303,
+      "r2_gap": 0.0692681914,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "candidate_id": 1,
+      "validation_month": "2026-02",
+      "learning_rate": 0.03,
+      "max_depth": 3,
+      "n_estimators": 500,
+      "mae_usd": 340888.974303771,
+      "rmse_usd": 793851.506460355,
+      "r2": 0.6437439176,
+      "train_r2": 0.8466977442,
+      "r2_gap": 0.2029538266,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "candidate_id": 1,
+      "validation_month": "2026-03",
+      "learning_rate": 0.03,
+      "max_depth": 3,
+      "n_estimators": 500,
+      "mae_usd": 332846.5618468098,
+      "rmse_usd": 783702.0886144472,
+      "r2": 0.7170451468,
+      "train_r2": 0.8099421069,
+      "r2_gap": 0.0928969601,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "candidate_id": 2,
+      "validation_month": "2026-02",
+      "learning_rate": 0.03,
+      "max_depth": 6,
+      "n_estimators": 200,
+      "mae_usd": 314731.256463338,
+      "rmse_usd": 778277.5677505116,
+      "r2": 0.6575850111,
+      "train_r2": 0.9161180183,
+      "r2_gap": 0.2585330073,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "candidate_id": 2,
+      "validation_month": "2026-03",
+      "learning_rate": 0.03,
+      "max_depth": 6,
+      "n_estimators": 200,
+      "mae_usd": 303072.6649141849,
+      "rmse_usd": 736083.4426028347,
+      "r2": 0.7503858294,
+      "train_r2": 0.8839834546,
+      "r2_gap": 0.1335976252,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "candidate_id": 3,
+      "validation_month": "2026-02",
+      "learning_rate": 0.03,
+      "max_depth": 6,
+      "n_estimators": 500,
+      "mae_usd": 286113.3479605447,
+      "rmse_usd": 749370.8805786659,
+      "r2": 0.6825485117,
+      "train_r2": 0.94745413,
+      "r2_gap": 0.2649056182,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "candidate_id": 3,
+      "validation_month": "2026-03",
+      "learning_rate": 0.03,
+      "max_depth": 6,
+      "n_estimators": 500,
+      "mae_usd": 272818.3809070508,
+      "rmse_usd": 696467.9890032612,
+      "r2": 0.7765309106,
+      "train_r2": 0.9212594166,
+      "r2_gap": 0.144728506,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "candidate_id": 4,
+      "validation_month": "2026-02",
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 200,
+      "mae_usd": 327983.0944085196,
+      "rmse_usd": 776948.009063149,
+      "r2": 0.6587539307,
+      "train_r2": 0.8645847505,
+      "r2_gap": 0.2058308199,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "candidate_id": 4,
+      "validation_month": "2026-03",
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 200,
+      "mae_usd": 316259.9832537767,
+      "rmse_usd": 761468.7680342075,
+      "r2": 0.7328720511,
+      "train_r2": 0.8331418754,
+      "r2_gap": 0.1002698242,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "candidate_id": 5,
+      "validation_month": "2026-02",
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 500,
+      "mae_usd": 294577.251502095,
+      "rmse_usd": 743606.1512935435,
+      "r2": 0.6874138808,
+      "train_r2": 0.9129707023,
+      "r2_gap": 0.2255568215,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "candidate_id": 5,
+      "validation_month": "2026-03",
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 500,
+      "mae_usd": 282049.043677049,
+      "rmse_usd": 719041.2747961509,
+      "r2": 0.7618104081,
+      "train_r2": 0.888902844,
+      "r2_gap": 0.1270924359,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "candidate_id": 6,
+      "validation_month": "2026-02",
+      "learning_rate": 0.1,
+      "max_depth": 6,
+      "n_estimators": 200,
+      "mae_usd": 280110.7523261173,
+      "rmse_usd": 747184.4067196263,
+      "r2": 0.6843982948,
+      "train_r2": 0.9576583887,
+      "r2_gap": 0.2732600939,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "candidate_id": 6,
+      "validation_month": "2026-03",
+      "learning_rate": 0.1,
+      "max_depth": 6,
+      "n_estimators": 200,
+      "mae_usd": 268575.4849558074,
+      "rmse_usd": 692949.0154373145,
+      "r2": 0.7787834052,
+      "train_r2": 0.9291136758,
+      "r2_gap": 0.1503302707,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "candidate_id": 7,
+      "validation_month": "2026-02",
+      "learning_rate": 0.1,
+      "max_depth": 6,
+      "n_estimators": 500,
+      "mae_usd": 260507.799484375,
+      "rmse_usd": 732859.951971613,
+      "r2": 0.6963832543,
+      "train_r2": 0.9781438817,
+      "r2_gap": 0.2817606273,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "candidate_id": 7,
+      "validation_month": "2026-03",
+      "learning_rate": 0.1,
+      "max_depth": 6,
+      "n_estimators": 500,
+      "mae_usd": 242297.6004400086,
+      "rmse_usd": 670738.2683672815,
+      "r2": 0.7927372245,
+      "train_r2": 0.9620929272,
+      "r2_gap": 0.1693557027,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    }
+  ],
+  "validation_summary": [
+    {
+      "candidate_id": 7,
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "n_estimators": 500,
+      "mean_monthly_mae_usd": 251402.6999621918,
+      "mean_monthly_rmse_usd": 701799.1101694473,
+      "mean_monthly_r2": 0.7445602394,
+      "mean_r2_gap": 0.225558165
+    },
+    {
+      "candidate_id": 6,
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "n_estimators": 200,
+      "mean_monthly_mae_usd": 274343.1186409623,
+      "mean_monthly_rmse_usd": 720066.7110784703,
+      "mean_monthly_r2": 0.73159085,
+      "mean_r2_gap": 0.2117951823
+    },
+    {
+      "candidate_id": 3,
+      "max_depth": 6,
+      "learning_rate": 0.03,
+      "n_estimators": 500,
+      "mean_monthly_mae_usd": 279465.8644337978,
+      "mean_monthly_rmse_usd": 722919.4347909635,
+      "mean_monthly_r2": 0.7295397112,
+      "mean_r2_gap": 0.2048170621
+    },
+    {
+      "candidate_id": 5,
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "n_estimators": 500,
+      "mean_monthly_mae_usd": 288313.147589572,
+      "mean_monthly_rmse_usd": 731323.7130448471,
+      "mean_monthly_r2": 0.7246121444,
+      "mean_r2_gap": 0.1763246287
+    },
+    {
+      "candidate_id": 2,
+      "max_depth": 6,
+      "learning_rate": 0.03,
+      "n_estimators": 200,
+      "mean_monthly_mae_usd": 308901.9606887614,
+      "mean_monthly_rmse_usd": 757180.5051766732,
+      "mean_monthly_r2": 0.7039854202,
+      "mean_r2_gap": 0.1960653162
+    },
+    {
+      "candidate_id": 4,
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "n_estimators": 200,
+      "mean_monthly_mae_usd": 322121.5388311482,
+      "mean_monthly_rmse_usd": 769208.3885486783,
+      "mean_monthly_r2": 0.6958129909,
+      "mean_r2_gap": 0.153050322
+    },
+    {
+      "candidate_id": 1,
+      "max_depth": 3,
+      "learning_rate": 0.03,
+      "n_estimators": 500,
+      "mean_monthly_mae_usd": 336867.7680752904,
+      "mean_monthly_rmse_usd": 788776.7975374011,
+      "mean_monthly_r2": 0.6803945322,
+      "mean_r2_gap": 0.1479253934
+    },
+    {
+      "candidate_id": 0,
+      "max_depth": 3,
+      "learning_rate": 0.03,
+      "n_estimators": 200,
+      "mean_monthly_mae_usd": 387548.5158912383,
+      "mean_monthly_rmse_usd": 856902.7873851312,
+      "mean_monthly_r2": 0.6238783686,
+      "mean_r2_gap": 0.1270067535
+    }
+  ],
+  "test_metrics": [
+    {
+      "model": "Random Forest: Week 6 features",
+      "train_rows": 27974,
+      "test_rows": 12480,
+      "train_r2": 0.9668653983,
+      "test_r2": 0.6961718913,
+      "test_mae_usd": 241294.6381036138,
+      "test_rmse_usd": 859906.9641077729,
+      "r2_gap": 0.270693507,
+      "mae_improvement_usd_vs_forest": 0.0,
+      "mae_improvement_pct_vs_forest": 0.0
+    },
+    {
+      "model": "XGBoost: starter",
+      "train_rows": 27974,
+      "test_rows": 12480,
+      "train_r2": 0.8293277728,
+      "test_r2": 0.6828883683,
+      "test_mae_usd": 327353.1293729968,
+      "test_rmse_usd": 878503.664106704,
+      "r2_gap": 0.1464394045,
+      "mae_improvement_usd_vs_forest": -86058.491269383,
+      "mae_improvement_pct_vs_forest": -35.6653143832
+    },
+    {
+      "model": "XGBoost: validation-selected",
+      "train_rows": 27974,
+      "test_rows": 12480,
+      "train_r2": 0.9574343495,
+      "test_r2": 0.7291994455,
+      "test_mae_usd": 251189.0881654397,
+      "test_rmse_usd": 811824.7092441751,
+      "r2_gap": 0.2282349039,
+      "mae_improvement_usd_vs_forest": -9894.4500618259,
+      "mae_improvement_pct_vs_forest": -4.100567729
+    }
+  ],
+  "test_month": "2026-04",
+  "limitations": [
+    "April previously inspected; historical test comparison, not a newly untouched estimate.",
+    "Repeated historical validation selection and 2024-25 geography limitations carry forward from Week 6."
+  ],
+  "error_diagnostics": [
+    {
+      "model": "Random Forest: Week 6 features",
+      "median_absolute_error_usd": 85050.66,
+      "p90_absolute_error_usd": 493922.8230000003,
+      "median_absolute_percentage_error_pct": 9.2315600142,
+      "mean_residual_usd": 41269.9069221684,
+      "nonpositive_predictions": 0
+    },
+    {
+      "model": "XGBoost: validation-selected",
+      "median_absolute_error_usd": 112044.96875,
+      "p90_absolute_error_usd": 502513.725,
+      "median_absolute_percentage_error_pct": 12.2815310559,
+      "mean_residual_usd": 25893.034266852,
+      "nonpositive_predictions": 1
+    }
+  ],
+  "price_band_metrics": [
+    {
+      "model": "Random Forest: Week 6 features",
+      "price_band": "At/below training median",
+      "rows": 5890,
+      "mae_usd": 80134.024073858,
+      "rmse_usd": 155214.053909025,
+      "r2": 0.2104327271,
+      "mean_residual_usd": -39367.5110798812
+    },
+    {
+      "model": "Random Forest: Week 6 features",
+      "price_band": "Training median to P90",
+      "rows": 5239,
+      "mae_usd": 206270.2907957943,
+      "rmse_usd": 349250.3234847328,
+      "r2": 0.13975294,
+      "mean_residual_usd": -22177.1388556622
+    },
+    {
+      "model": "Random Forest: Week 6 features",
+      "price_band": "Above training P90",
+      "rows": 1351,
+      "mae_usd": 1079731.7751731381,
+      "rmse_usd": 2500522.746258641,
+      "r2": 0.4530881027,
+      "mean_residual_usd": 638866.8461243347
+    },
+    {
+      "model": "XGBoost: validation-selected",
+      "price_band": "At/below training median",
+      "rows": 5890,
+      "mae_usd": 105038.9260810166,
+      "rmse_usd": 167212.258889426,
+      "r2": 0.0836459948,
+      "mean_residual_usd": -53613.8515266872
+    },
+    {
+      "model": "XGBoost: validation-selected",
+      "price_band": "Training median to P90",
+      "rows": 5239,
+      "mae_usd": 221453.5269016034,
+      "rmse_usd": 361209.0364713013,
+      "r2": 0.0798327411,
+      "mean_residual_usd": -8282.4212841191
+    },
+    {
+      "model": "XGBoost: validation-selected",
+      "price_band": "Above training P90",
+      "rows": 1351,
+      "mae_usd": 1003675.439119171,
+      "rmse_usd": 2336723.542399679,
+      "r2": 0.5223932896,
+      "mean_residual_usd": 505049.7840488527
+    }
+  ],
+  "price_band_training_thresholds": [
+    875000.0,
+    2300000.0
+  ],
+  "training_median_reference_test_metrics": {
+    "mae_usd": 693133.941292468,
+    "rmse_usd": 1619442.4580374998,
+    "r2": -0.07759622289950174
+  },
+  "primary_metric_conclusion": "Random Forest has lower April MAE; tuned XGBoost has lower RMSE and higher R\u00b2."
+}

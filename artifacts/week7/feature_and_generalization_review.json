@@ -1,0 +1,513 @@
+{
+  "generated_utc": "2026-11-12T04:28:32.349335+00:00",
+  "input_sha256": "ef58d6f1936fdc70b7d8184d37e1a90c26a87fb673c9b4df91a8711163f0f07c",
+  "boundary_sha256": "316d71c988e1d75a312cfcf72b2c21ee6519edafb5bc4f78e70db799fb8976a3",
+  "package_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "geopandas": "1.2.0",
+    "shapely": "2.2.0",
+    "xgboost": "3.4.1"
+  },
+  "status": "Completed exploratory validation follow-up after April inspection; no new test scores",
+  "reviewed_findings": {
+    "features": "Properties plus districts retained; logs tie, ratios worsen MAE in both months.",
+    "complexity": "Original tuned settings retain lowest MAE; stronger regularization improves RMSE but worsens MAE.",
+    "importance": "Coordinates and living area rank highest, followed by districts and bathrooms."
+  },
+  "fixed_feature_experiment_parameters": {
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 500
+  },
+  "feature_sets": {
+    "Properties only": [
+      "LivingArea",
+      "LotSizeSquareFeet",
+      "BedroomsTotal",
+      "BathroomsTotalInteger",
+      "GarageSpaces",
+      "Stories",
+      "YearBuilt",
+      "Latitude",
+      "Longitude",
+      "City",
+      "PostalCode"
+    ],
+    "Properties + districts": [
+      "LivingArea",
+      "LotSizeSquareFeet",
+      "BedroomsTotal",
+      "BathroomsTotalInteger",
+      "GarageSpaces",
+      "Stories",
+      "YearBuilt",
+      "Latitude",
+      "Longitude",
+      "City",
+      "PostalCode",
+      "ElementaryDistrictCode",
+      "HighDistrictCode",
+      "UnifiedDistrictCode"
+    ],
+    "Geo + logs": [
+      "LivingArea",
+      "LotSizeSquareFeet",
+      "BedroomsTotal",
+      "BathroomsTotalInteger",
+      "GarageSpaces",
+      "Stories",
+      "YearBuilt",
+      "Latitude",
+      "Longitude",
+      "City",
+      "PostalCode",
+      "ElementaryDistrictCode",
+      "HighDistrictCode",
+      "UnifiedDistrictCode",
+      "LogLivingArea",
+      "LogLotSize"
+    ],
+    "Geo + ratios": [
+      "LivingArea",
+      "LotSizeSquareFeet",
+      "BedroomsTotal",
+      "BathroomsTotalInteger",
+      "GarageSpaces",
+      "Stories",
+      "YearBuilt",
+      "Latitude",
+      "Longitude",
+      "City",
+      "PostalCode",
+      "ElementaryDistrictCode",
+      "HighDistrictCode",
+      "UnifiedDistrictCode",
+      "BedBathRatio",
+      "LivingAreaPerBedroom"
+    ],
+    "Geo + all engineered": [
+      "LivingArea",
+      "LotSizeSquareFeet",
+      "BedroomsTotal",
+      "BathroomsTotalInteger",
+      "GarageSpaces",
+      "Stories",
+      "YearBuilt",
+      "Latitude",
+      "Longitude",
+      "City",
+      "PostalCode",
+      "ElementaryDistrictCode",
+      "HighDistrictCode",
+      "UnifiedDistrictCode",
+      "PropertyAge",
+      "BedBathRatio",
+      "LivingAreaPerBedroom",
+      "LogLivingArea",
+      "LogLotSize"
+    ]
+  },
+  "feature_results": [
+    {
+      "validation_month": "2026-02",
+      "feature_set": "Properties only",
+      "train_mae_usd": 139829.8532418268,
+      "train_r2": 0.9759791293,
+      "validation_mae_usd": 265136.3992740049,
+      "validation_rmse_usd": 756732.414464757,
+      "validation_r2": 0.6762808317,
+      "r2_gap": 0.2996982976,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "validation_month": "2026-02",
+      "feature_set": "Properties + districts",
+      "train_mae_usd": 132632.067702688,
+      "train_r2": 0.9781438817,
+      "validation_mae_usd": 260507.799484375,
+      "validation_rmse_usd": 732859.951971613,
+      "validation_r2": 0.6963832543,
+      "r2_gap": 0.2817606273,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "validation_month": "2026-02",
+      "feature_set": "Geo + logs",
+      "train_mae_usd": 132632.067702688,
+      "train_r2": 0.9781438817,
+      "validation_mae_usd": 260507.799484375,
+      "validation_rmse_usd": 732859.951971613,
+      "validation_r2": 0.6963832543,
+      "r2_gap": 0.2817606273,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "validation_month": "2026-02",
+      "feature_set": "Geo + ratios",
+      "train_mae_usd": 128009.8796574962,
+      "train_r2": 0.9807000831,
+      "validation_mae_usd": 262138.5717070094,
+      "validation_rmse_usd": 756540.0282654662,
+      "validation_r2": 0.6764454109,
+      "r2_gap": 0.3042546723,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "validation_month": "2026-02",
+      "feature_set": "Geo + all engineered",
+      "train_mae_usd": 128009.8796574962,
+      "train_r2": 0.9807000831,
+      "validation_mae_usd": 262138.5717070094,
+      "validation_rmse_usd": 756540.0282654662,
+      "validation_r2": 0.6764454109,
+      "r2_gap": 0.3042546723,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "validation_month": "2026-03",
+      "feature_set": "Properties only",
+      "train_mae_usd": 165216.2722287876,
+      "train_r2": 0.9567731439,
+      "validation_mae_usd": 248201.149176742,
+      "validation_rmse_usd": 677843.4834615935,
+      "validation_r2": 0.7883228452,
+      "r2_gap": 0.1684502987,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "validation_month": "2026-03",
+      "feature_set": "Properties + districts",
+      "train_mae_usd": 155782.4344451605,
+      "train_r2": 0.9620929272,
+      "validation_mae_usd": 242297.6004400086,
+      "validation_rmse_usd": 670738.2683672815,
+      "validation_r2": 0.7927372245,
+      "r2_gap": 0.1693557027,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "validation_month": "2026-03",
+      "feature_set": "Geo + logs",
+      "train_mae_usd": 155782.4344451605,
+      "train_r2": 0.9620929272,
+      "validation_mae_usd": 242297.6004400086,
+      "validation_rmse_usd": 670738.2683672815,
+      "validation_r2": 0.7927372245,
+      "r2_gap": 0.1693557027,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "validation_month": "2026-03",
+      "feature_set": "Geo + ratios",
+      "train_mae_usd": 149980.2572090922,
+      "train_r2": 0.9642326434,
+      "validation_mae_usd": 243128.4820786214,
+      "validation_rmse_usd": 688017.3573845626,
+      "validation_r2": 0.7819209591,
+      "r2_gap": 0.1823116843,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "validation_month": "2026-03",
+      "feature_set": "Geo + all engineered",
+      "train_mae_usd": 149980.2572090922,
+      "train_r2": 0.9642326434,
+      "validation_mae_usd": 243128.4820786214,
+      "validation_rmse_usd": 688017.3573845626,
+      "validation_r2": 0.7819209591,
+      "r2_gap": 0.1823116843,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    }
+  ],
+  "feature_summary": [
+    {
+      "feature_set": "Properties + districts",
+      "mean_validation_mae_usd": 251402.6999621918,
+      "mean_validation_rmse_usd": 701799.1101694473,
+      "mean_validation_r2": 0.7445602394,
+      "mean_train_r2": 0.9701184044,
+      "mean_r2_gap": 0.225558165,
+      "mae_improvement_vs_geo_reference_usd": 0.0
+    },
+    {
+      "feature_set": "Geo + logs",
+      "mean_validation_mae_usd": 251402.6999621918,
+      "mean_validation_rmse_usd": 701799.1101694473,
+      "mean_validation_r2": 0.7445602394,
+      "mean_train_r2": 0.9701184044,
+      "mean_r2_gap": 0.225558165,
+      "mae_improvement_vs_geo_reference_usd": 0.0
+    },
+    {
+      "feature_set": "Geo + ratios",
+      "mean_validation_mae_usd": 252633.5268928154,
+      "mean_validation_rmse_usd": 722278.6928250145,
+      "mean_validation_r2": 0.729183185,
+      "mean_train_r2": 0.9724663633,
+      "mean_r2_gap": 0.2432831783,
+      "mae_improvement_vs_geo_reference_usd": -1230.8269306236
+    },
+    {
+      "feature_set": "Geo + all engineered",
+      "mean_validation_mae_usd": 252633.5268928154,
+      "mean_validation_rmse_usd": 722278.6928250145,
+      "mean_validation_r2": 0.729183185,
+      "mean_train_r2": 0.9724663633,
+      "mean_r2_gap": 0.2432831783,
+      "mae_improvement_vs_geo_reference_usd": -1230.8269306236
+    },
+    {
+      "feature_set": "Properties only",
+      "mean_validation_mae_usd": 256668.7742253734,
+      "mean_validation_rmse_usd": 717287.9489631753,
+      "mean_validation_r2": 0.7323018385,
+      "mean_train_r2": 0.9663761366,
+      "mean_r2_gap": 0.2340742981,
+      "mae_improvement_vs_geo_reference_usd": -5266.0742631817
+    }
+  ],
+  "control_parameters": {
+    "Original tuned settings": {
+      "learning_rate": 0.1,
+      "max_depth": 6,
+      "n_estimators": 500
+    },
+    "Shallower depth=3": {
+      "learning_rate": 0.1,
+      "max_depth": 3,
+      "n_estimators": 500
+    },
+    "Stronger regularization": {
+      "learning_rate": 0.1,
+      "max_depth": 6,
+      "n_estimators": 500,
+      "min_child_weight": 10,
+      "reg_lambda": 10,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8
+    }
+  },
+  "control_results": [
+    {
+      "validation_month": "2026-02",
+      "configuration": "Original tuned settings",
+      "train_mae_usd": 132632.067702688,
+      "train_r2": 0.9781438817,
+      "validation_mae_usd": 260507.799484375,
+      "validation_rmse_usd": 732859.951971613,
+      "validation_r2": 0.6963832543,
+      "r2_gap": 0.2817606273,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "validation_month": "2026-02",
+      "configuration": "Shallower depth=3",
+      "train_mae_usd": 223695.963305504,
+      "train_r2": 0.9129707023,
+      "validation_mae_usd": 294577.251502095,
+      "validation_rmse_usd": 743606.1512935435,
+      "validation_r2": 0.6874138808,
+      "r2_gap": 0.2255568215,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "validation_month": "2026-02",
+      "configuration": "Stronger regularization",
+      "train_mae_usd": 194846.3340265581,
+      "train_r2": 0.9239303235,
+      "validation_mae_usd": 278641.2670453038,
+      "validation_rmse_usd": 730269.5638995186,
+      "validation_r2": 0.6985258062,
+      "r2_gap": 0.2254045173,
+      "train_rows": 7473,
+      "validation_rows": 8950
+    },
+    {
+      "validation_month": "2026-03",
+      "configuration": "Original tuned settings",
+      "train_mae_usd": 155782.4344451605,
+      "train_r2": 0.9620929272,
+      "validation_mae_usd": 242297.6004400086,
+      "validation_rmse_usd": 670738.2683672815,
+      "validation_r2": 0.7927372245,
+      "r2_gap": 0.1693557027,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "validation_month": "2026-03",
+      "configuration": "Shallower depth=3",
+      "train_mae_usd": 237701.789334175,
+      "train_r2": 0.888902844,
+      "validation_mae_usd": 282049.043677049,
+      "validation_rmse_usd": 719041.2747961509,
+      "validation_r2": 0.7618104081,
+      "r2_gap": 0.1270924359,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    },
+    {
+      "validation_month": "2026-03",
+      "configuration": "Stronger regularization",
+      "train_mae_usd": 203756.6145137298,
+      "train_r2": 0.9071787776,
+      "validation_mae_usd": 253971.0181599469,
+      "validation_rmse_usd": 661320.1483911037,
+      "validation_r2": 0.798516889,
+      "r2_gap": 0.1086618886,
+      "train_rows": 16423,
+      "validation_rows": 11551
+    }
+  ],
+  "control_summary": [
+    {
+      "configuration": "Original tuned settings",
+      "mean_validation_mae_usd": 251402.6999621918,
+      "mean_validation_rmse_usd": 701799.1101694473,
+      "mean_validation_r2": 0.7445602394,
+      "mean_train_r2": 0.9701184044,
+      "mean_r2_gap": 0.225558165
+    },
+    {
+      "configuration": "Stronger regularization",
+      "mean_validation_mae_usd": 266306.1426026254,
+      "mean_validation_rmse_usd": 695794.8561453111,
+      "mean_validation_r2": 0.7485213476,
+      "mean_train_r2": 0.9155545505,
+      "mean_r2_gap": 0.1670332029
+    },
+    {
+      "configuration": "Shallower depth=3",
+      "mean_validation_mae_usd": 288313.147589572,
+      "mean_validation_rmse_usd": 731323.7130448471,
+      "mean_validation_r2": 0.7246121444,
+      "mean_train_r2": 0.9009367732,
+      "mean_r2_gap": 0.1763246287
+    }
+  ],
+  "provisional_feature_set": "Properties + districts",
+  "provisional_configuration": "Original tuned settings",
+  "permutation_feature_families": {
+    "Living area (including derived features)": [
+      "LivingArea"
+    ],
+    "Lot size (including log lot size)": [
+      "LotSizeSquareFeet"
+    ],
+    "Bedrooms (including derived ratios)": [
+      "BedroomsTotal"
+    ],
+    "Bathrooms (including bed/bath ratio)": [
+      "BathroomsTotalInteger"
+    ],
+    "Year built (including property age)": [
+      "YearBuilt"
+    ],
+    "Garage spaces": [
+      "GarageSpaces"
+    ],
+    "Stories": [
+      "Stories"
+    ],
+    "Coordinates (latitude + longitude)": [
+      "Latitude",
+      "Longitude"
+    ],
+    "City": [
+      "City"
+    ],
+    "ZIP code": [
+      "PostalCode"
+    ],
+    "School districts (3 codes)": [
+      "ElementaryDistrictCode",
+      "HighDistrictCode",
+      "UnifiedDistrictCode"
+    ]
+  },
+  "permutation_importance": [
+    {
+      "feature_family": "Stories",
+      "mae_increase_usd": 6079.0328026693,
+      "shuffle_std_usd": 882.4521806028,
+      "repeats": 5
+    },
+    {
+      "feature_family": "Garage spaces",
+      "mae_increase_usd": 7908.8672320638,
+      "shuffle_std_usd": 947.9864921745,
+      "repeats": 5
+    },
+    {
+      "feature_family": "Bedrooms (including derived ratios)",
+      "mae_increase_usd": 12537.8930529297,
+      "shuffle_std_usd": 521.2767278972,
+      "repeats": 5
+    },
+    {
+      "feature_family": "Lot size (including log lot size)",
+      "mae_increase_usd": 16118.1118680338,
+      "shuffle_std_usd": 1384.4695148193,
+      "repeats": 5
+    },
+    {
+      "feature_family": "Year built (including property age)",
+      "mae_increase_usd": 18313.8954246745,
+      "shuffle_std_usd": 1736.0387195957,
+      "repeats": 5
+    },
+    {
+      "feature_family": "ZIP code",
+      "mae_increase_usd": 28040.1704352213,
+      "shuffle_std_usd": 2811.8497919115,
+      "repeats": 5
+    },
+    {
+      "feature_family": "City",
+      "mae_increase_usd": 60374.9912552734,
+      "shuffle_std_usd": 1865.7642245897,
+      "repeats": 5
+    },
+    {
+      "feature_family": "Bathrooms (including bed/bath ratio)",
+      "mae_increase_usd": 67626.8365872396,
+      "shuffle_std_usd": 2694.722444131,
+      "repeats": 5
+    },
+    {
+      "feature_family": "School districts (3 codes)",
+      "mae_increase_usd": 68263.708089974,
+      "shuffle_std_usd": 2314.5063754181,
+      "repeats": 5
+    },
+    {
+      "feature_family": "Living area (including derived features)",
+      "mae_increase_usd": 231708.4989350912,
+      "shuffle_std_usd": 3028.6941580494,
+      "repeats": 5
+    },
+    {
+      "feature_family": "Coordinates (latitude + longitude)",
+      "mae_increase_usd": 291424.485030485,
+      "shuffle_std_usd": 5173.6887555675,
+      "repeats": 5
+    }
+  ],
+  "importance_validation_month": "2026-03",
+  "importance_sample_rows": 3000,
+  "importance_baseline_mae_usd": 232979.7239391276
+}
